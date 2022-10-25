@@ -94,7 +94,7 @@ export default defineComponent({
       () => disasterForm.types.length !== 0 && !(disasterForm.types.length === 1 && disasterForm.types[0] === 'ground')
     )
     const invalidTypesState = computed(() => {
-      if (disasterForm.types[0] === 'ground') {
+      if (disasterForm.types.length === 1 && disasterForm.types[0] === 'ground') {
         return '地盤のみの選択は出来ません。他の調査票も含めてチェックしてください。'
       }
       return '調査票の種類は1つ以上選択してください。'
